@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Compras</title>
+  <!-- <link rel="stylesheet" href="../assets/styles.css" type="text/css"> -->
+  <link rel="stylesheet" href="../assets/purchases.css" type="text/css">
+</head>
+<body>
+  <h2>Gestión de Compras</h2>
+
+  <button id="backButton" class="btn info">Volver</button>
+  <button id="openModalBtn" class="btn success">Agregar Compra</button>
+  <a id="reportBtn" href="reportPurchases.html">Ver detalles</a>
+
+  <!-- Modal -->
+  <div id="purchaseModal" class="modal">
+    <div class="modal-content">
+      <span class="close" aria-label="Close modal">&times;</span>
+      <h2 id="modalTitle">Agregar Compra</h2>
+      <form id="addPurchaseForm" data-mode="add" data-id="">
+        
+        <label for="date">Fecha:</label>
+        <input type="date" name="date" id="date" required>
+        
+        <label for="totalAmount">Monto total de la compra:</label>
+        <input type="text" name="totalAmount" id="totalAmount" required>
+        
+        <label for="supplier_id">Proveedor:</label>
+        <select name="supplier_id" id="supplier_id" required>
+          <!-- Las opciones se llenarán dinámicamente -->
+        </select>        
+        
+        <button type="submit" class="btn success">Guardar Compra</button>
+      </form>
+    </div>
+  </div>
+
+
+  <table>
+    <caption>Lista de Compras</caption>
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Monto</th>
+        <th>Proveedor</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="purchase-list"></tbody>
+  </table>
+
+  <script src="../scripts/purchases.js"></script>
+</body>
+</html>

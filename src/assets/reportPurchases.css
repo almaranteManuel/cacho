@@ -1,0 +1,143 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  /* Encabezados */
+  h1 {
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+  }
+  
+  /* Formularios */
+  form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  form label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  form input[type="month"], form input[type="number"] {
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+  }
+  
+  form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  form button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Tablas */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+  }
+  
+  table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  table th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+  
+    form {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    form input[type="month"], form input[type="number"], form button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    table th, table td {
+      font-size: 14px;
+      padding: 6px;
+    }
+    
+  }
+
+    /* Button Styles */
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 10px 0;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      
+      .btn.success {
+        background-color: #4CAF50;
+        color: white;
+      }
+      
+      .btn.secondary {
+        background-color: #f1f1f1;
+        color: #333;
+      }
+      
+      .btn.success:hover {
+        background-color: #45a049;
+      }
+      
+      .btn.secondary:hover {
+        background-color: #ddd;
+      }
+      
+      .info {background-color: #2196F3; color: white;} /* Blue */
+      .info:hover {background: #0b7dda;}
+      
+      .warning {background-color: #ff9800;} /* Orange */
+      .warning:hover {background: #e68a00;}

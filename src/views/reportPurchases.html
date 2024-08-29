@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportes</title>
+
+  <link rel="stylesheet" href="../assets/reportPurchases.css" type="text/css">
+</head>
+<body>
+  <h1>Reportes</h1>
+  <button id="backButton" class="btn info">Volver</button>
+
+  <h2>Compras del Mes</h2>
+  <form id="monthForm">
+    <label for="month">Mes:</label>
+    <input type="month" id="month" name="month">
+    <button type="submit">Buscar</button>
+  </form>
+  <table id="monthPurchasesTable">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Monto Total</th>
+        <th>Proveedor</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+    <tfoot>
+      <tr>
+        <td>Total del Mes:</td>
+        <td id="monthTotal"></td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <h2>Compras del Año</h2>
+  <form id="yearForm">
+    <label for="year">Año:</label>
+    <input type="number" id="year" name="year" min="2000" max="2100" value="2024">
+    <button type="submit">Buscar</button>
+  </form>
+  <table id="yearPurchasesTable">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Monto Total</th>
+        <th>Proveedor</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+    <tfoot>
+      <tr>
+        <td>Total del Año:</td>
+        <td id="yearTotal"></td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <script src="../scripts/reportPurchases.js"></script>
+
+</body>
+</html>

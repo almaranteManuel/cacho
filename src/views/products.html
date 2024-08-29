@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Productos</title>
+  <!-- <link rel="stylesheet" href="../assets/styles.css" type="text/css"> -->
+  <link rel="stylesheet" href="../assets/products.css" type="text/css">
+</head>
+<body>
+  <h2>Gestión de Productos</h2>
+  <button id="backButton" class="btn info">Volver</button>
+  <button id="openModalBtn" class="btn success">Agregar Producto</button>
+
+  <!-- Modal -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close" aria-label="Close modal">&times;</span>
+      <h2 id="modalTitle">Agregar Producto</h2>
+      <form id="addProductForm" data-mode="add" data-id="">
+        <label for="variant">Variante de venta:</label>
+        <input type="text" id="variant" name="variant" value=1.7 required>
+        
+        <label for="code">Código:</label>
+        <input type="text" name="code" id="code" required>
+        
+        <label for="description">Descripción:</label>
+        <input type="text" name="description" id="description" required>
+        
+        <label for="price">Precio Mayorista:</label>
+        <input type="number" name="price" id="price" step="0.01" required>
+        
+        <label for="own_price">Precio Propio:</label>
+        <input type="number" name="own_price" step="0.01" id="own_price">
+        
+        <label for="stock">Stock:</label>
+        <input type="number" name="stock" id="stock" required>
+        
+        <button type="submit" class="btn success">Guardar Producto</button>
+      </form>
+    </div>
+  </div>
+
+
+  <table>
+    <h2 id="productCount">Total de productos: 0</h2>
+    <caption>Lista de Productos</caption>
+    <input type="text" id="searchInput" placeholder="Buscar por código" aria-label="Buscar productos por código"/>
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Descripción</th>
+        <th>Precio Mayorista</th>
+        <th>Precio Minorista</th>
+        <th>Precio Propio</th>
+        <th>Stock</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="product-list"></tbody>
+  </table>
+
+  <script src="../scripts/products.js"></script>
+</body>
+</html>
