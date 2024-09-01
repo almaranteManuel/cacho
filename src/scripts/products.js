@@ -168,7 +168,7 @@ const addProductForm = document.getElementById('addProductForm');
 addProductForm.onsubmit = function(event) {
   event.preventDefault();
 
-  // Recoger datos del formulario
+  // Tomamos los datos del formulario
   const formData = new FormData(addProductForm);
   const product = {
     code: formData.get('code'),
@@ -196,7 +196,7 @@ function editProduct(id) {
       .then(product => {
         const productData = product.dataValues;
 
-        // Llenar los campos del formulario con los datos del producto
+        // Llenamos los campos del formulario con los datos del producto
         document.getElementById('code').value = productData.code || '';
         document.getElementById('description').value = productData.description || '';
         document.getElementById('price').value = productData.price || '';
@@ -204,11 +204,11 @@ function editProduct(id) {
         document.getElementById('stock').value = productData.stock || '';
         document.getElementById('variant').value = productData.variant || '1.7';
 
-        // Configurar el formulario para el modo de edición
+        // Configuramos el formulario para el modo de edición
         addProductForm.dataset.mode = 'edit';
         addProductForm.dataset.id = id;
 
-        // Actualizar el título del modal y mostrarlo
+        // Actualizamos el título del modal y mostrarlo
         document.getElementById('modalTitle').textContent = 'Editar Producto';
         modal.style.display = 'block';
       })
@@ -220,7 +220,7 @@ function editProduct(id) {
   }
 }
 
-// Funcionalidad del botón Volver
+// botón Volver
 document.getElementById('backButton').addEventListener('click', () => {
   window.history.back();
 });

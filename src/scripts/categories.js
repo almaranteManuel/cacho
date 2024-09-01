@@ -16,12 +16,12 @@ function loadCategories() {
   }
 }
 
-// Manejo del botón de volver
+// Manejo del botón  volver
 document.getElementById('backButton').addEventListener('click', () => {
-  window.history.back(); // Regresa a la página anterior
+  window.history.back();
 });
 
-// Manejo del formulario de adición de categorías
+// Manejo del formulario para agregar categorías
 const addCategoryButton = document.getElementById('save-category');
 addCategoryButton.addEventListener('click', () => {
   const categoryName = document.getElementById('category-name').value;

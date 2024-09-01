@@ -1,3 +1,5 @@
+
+//MODO OSCURO
 document.getElementById('toggle-dark-mode').addEventListener('click', async () => {
     if (window.darkMode && typeof window.darkMode.toggle === 'function') {
       const isDarkMode = await window.darkMode.toggle();

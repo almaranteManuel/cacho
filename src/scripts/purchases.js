@@ -5,7 +5,7 @@ function loadSuppliers() {
       window.api.loadSuppliers()
         .then(suppliers => {
           const supplierSelect = document.getElementById('supplier_id');
-          supplierSelect.innerHTML = ''; // Limpiar opciones anteriores
+          supplierSelect.innerHTML = ''; // Limpiamos opciones anteriores
   
           suppliers.forEach(supplier => {
             const option = document.createElement('option');
@@ -47,7 +47,7 @@ function loadSuppliers() {
     });
   }
 
-    // Función para convertir la fecha a la zona horaria deseada
+    // Función para convertir la fecha
     function convertToDesiredTimeZone(date) {
       const utcDate = new Date(date);
       const offset = new Date().getTimezoneOffset() * 60 * 1000;
@@ -56,7 +56,6 @@ function loadSuppliers() {
   
     // Función para formatear la fecha en español
     function formatSpanishDate(date) {
-      // Formatear la fecha a español usando `toLocaleDateString`
       return date.toLocaleDateString('es-ES', {
         day: '2-digit',
         month: '2-digit',
@@ -96,7 +95,7 @@ function loadSuppliers() {
             purchaseTableBody.appendChild(row);
           });
   
-          addEventListenersToButtons(); // Añadir eventos después de crear las filas
+          addEventListenersToButtons(); // Añadimos eventos después de crear las filas
         })
         .catch(err => {
           console.error('Error al cargar compras:', err);
@@ -146,7 +145,7 @@ function loadSuppliers() {
       if (window.api && typeof window.api.deletePurchase === 'function') {
         window.api.deletePurchase(id)
           .then(() => {
-            loadPurchases(); // Recargar la lista de compras después de eliminar uno
+            loadPurchases(); // Recargar la lista de compras después de eliminar una
           })
           .catch(err => {
             console.error('Error al eliminar la compra:', err);
@@ -167,11 +166,11 @@ function loadSuppliers() {
     document.getElementById('addPurchaseForm').dataset.mode = 'add';
     document.getElementById('addPurchaseForm').dataset.id = ''; // Vacío en modo agregar
     addPurchaseForm.reset();
-    loadSuppliers(); // Cargar los proveedores antes de mostrar el modal
+    loadSuppliers(); // Cargamos los proveedores antes de mostrar el modal
     modal.style.display = 'block';
   }  
   
-  // Manejo del botón de cerrar el modal
+  // Botón de cerrar el modal
   closeModal.onclick = function() {
     modal.style.display = 'none';
   }
@@ -213,18 +212,18 @@ function loadSuppliers() {
         .then(purchase => {
           const purchaseData = purchase.dataValues;
   
-          // Llenar los campos del formulario con los datos de la compra
+          // Llenamos los campos del formulario con los datos de la compra
           document.getElementById('date').value = purchaseData.date || '';
           document.getElementById('totalAmount').value = purchaseData.totalAmount || '';
   
           loadSuppliers(); // Cargar proveedores y luego seleccionar el actual
           document.getElementById('supplier_id').value = purchaseData.supplier_id || '';
   
-          // Configurar el formulario para el modo de edición
+          // Configuramos el formulario para el modo de edición
           addPurchaseForm.dataset.mode = 'edit';
           addPurchaseForm.dataset.id = id;
   
-          // Actualizar el título del modal y mostrarlo
+          // Actualizamos el título del modal y mostrarlo
           document.getElementById('modalTitle').textContent = 'Editar Compra';
           modal.style.display = 'block';
         })
@@ -236,7 +235,7 @@ function loadSuppliers() {
     }
   }  
   
-  // Funcionalidad del botón Volver
+  // Botón Volver
   document.getElementById('backButton').addEventListener('click', () => {
     window.history.back();
   });
