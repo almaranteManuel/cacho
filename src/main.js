@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain, nativeTheme } = require('electron');
 const path = require('path');
 const productRoutes = require('./routes/productRoutes');
 const categoriesRoutes = require('./routes/categoriesRoutes');
@@ -20,6 +20,15 @@ function createWindow() {
 
   mainWindow.loadFile('src/views/index.html');
 }
+
+ipcMain.handle('dark-mode:toggle', () => {
+  nativeTheme.themeSource = nativeTheme.shouldUseDarkColors ? 'light' : 'dark';
+  return nativeTheme.shouldUseDarkColors;
+});
+
+ipcMain.handle('dark-mode:system', () => {
+  nativeTheme.themeSource = 'system';
+});
 
 app.whenReady().then(() => {
   createWindow();

@@ -1,3 +1,15 @@
+/* General reset and base styles */
+:root {
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  body { background: #333; color: white; }
+}
+
+@media (prefers-color-scheme: light) {
+  body { background: #ddd; color: black; }
+}
 
 body {
   padding: 10px;
@@ -18,7 +30,6 @@ table th, table td {
   padding: 6px;
 }
 
-} */
 
 /* Button Styles */
 .btn {

@@ -46,12 +46,29 @@ function loadSuppliers() {
       });
     });
   }
+
+    // Función para convertir la fecha a la zona horaria deseada
+    function convertToDesiredTimeZone(date) {
+      const utcDate = new Date(date);
+      const offset = new Date().getTimezoneOffset() * 60 * 1000;
+      return new Date(utcDate.getTime() + offset);
+    }
+  
+    // Función para formatear la fecha en español
+    function formatSpanishDate(date) {
+      // Formatear la fecha a español usando `toLocaleDateString`
+      return date.toLocaleDateString('es-ES', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+      });
+    }
   
   //ACA DEFINIMOS Y CREAMOS LA TABLA PARA EL INDEX
   function createPurchaseRow(purchase) {
 
     const row = document.createElement('tr');
-    const formmatedDate = new Date(purchase.date).toLocaleDateString();
+    const formmatedDate = formatSpanishDate(convertToDesiredTimeZone(purchase.date));
     row.innerHTML = `
       <td>${formmatedDate}</td>
       <td>$ ${purchase.totalAmount}</td>
