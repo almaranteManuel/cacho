@@ -1,80 +1,18 @@
-/* General reset and base styles */
-:root {
-  color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  body { background: #333; color: white; }
-}
-
-@media (prefers-color-scheme: light) {
-  body { background: #ddd; color: black; }
-}
-
-body {
-  padding: 10px;
-}
-
-form {
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-form input[type="month"], form input[type="number"], form button {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-table th, table td {
-  font-size: 14px;
-  padding: 6px;
-}
-
-
-/* Button Styles */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px 0;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  /* General reset and base styles */
+  :root {
+    color-scheme: light dark;
   }
-  
-  .btn.success {
-    background-color: #4CAF50;
-    color: white;
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #333; color: white; }
   }
-  
-  .btn.secondary {
-    background-color: #f1f1f1;
-    color: #333;
-  }
-  
-  .btn.success:hover {
-    background-color: #45a049;
-  }
-  
-  .btn.secondary:hover {
-    background-color: #ddd;
-  }
-  
-  .info {background-color: #2196F3; color: white;}
-  .info:hover {background: #0b7dda;}
-  
-  .warning {background-color: #ff9800;}
-  .warning:hover {background: #e68a00;} */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+  @media (prefers-color-scheme: light) {
+    body { background: #ddd; color: black; }
   }
   
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: sans-serif;
   }
   
   .main-container {
@@ -205,38 +143,9 @@ table th, table td {
     }
   }
 
-    /* Button Styles */
-.btn {
-display: inline-block;
-padding: 10px 20px;
-margin: 10px 0;
-font-size: 16px;
-cursor: pointer;
-border: none;
-border-radius: 5px;
-transition: background-color 0.3s ease;
-}
-
-.btn.success {
-background-color: #4CAF50;
-color: white;
-}
-
-.btn.secondary {
-background-color: #f1f1f1;
-color: #333;
-}
-
-.btn.success:hover {
-background-color: #45a049;
-}
-
-.btn.secondary:hover {
-background-color: #ddd;
-}
-
-.info {background-color: #2196F3; color: white;} /* Blue */
-.info:hover {background: #0b7dda;}
-
-.warning {background-color: #ff9800;} /* Orange */
-.warning:hover {background: #e68a00;}
+  .logo {
+    max-height: 50px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+  }
